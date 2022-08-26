@@ -5,3 +5,4 @@ Makefile
 libc_wrapper.a
 CMakeDoxyfile.in
 CMakeDoxygenDefaults.cmake
+c_wrapper
