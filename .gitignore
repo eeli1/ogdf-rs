@@ -1,5 +1,9 @@
 /target
+Cargo.lock
 log_stderr.txt
 log_stdout.txt
 c_wrapper/libCOIN.a
 c_wrapper/libOGDF.a
+.vscode/configurationCache.log
+.vscode/dryrun.log
+.vscode/targets.log
