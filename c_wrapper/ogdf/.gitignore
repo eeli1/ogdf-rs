@@ -3,6 +3,7 @@ cmake_install.cmake
 CMakeCache.txt
 Makefile
 ogdf-config.cmake
+!cmake/ogdf-config.cmake
 OgdfTargets.cmake
 include/ogdf/basic/internal/config_autogen.h
 CoinTargets.cmake
