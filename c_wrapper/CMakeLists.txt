@@ -1,14 +1,14 @@
 cmake_minimum_required(VERSION 3.1)
 project(OGDF-SYS CXX)
 
-#add_library(c_wrapper STATIC test.cpp graph.cpp)
-add_executable(c_wrapper test.cpp graph.cpp main.cpp)
+add_library(c_wrapper STATIC test.cpp graph.cpp)
+#add_executable(c_wrapper test.cpp graph.cpp main.cpp)
 
 add_subdirectory(ogdf)
 include_directories(c_wrapper ogdf/include)
-#link_directories(../ogdf)
 
-set(CMAKE_CXX_FLAGS "-Logdf")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Logdf -fPIC")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Logdf -fPIC")
 
 target_link_libraries(c_wrapper libOGDF.a)
 target_link_libraries(c_wrapper libCOIN.a) 

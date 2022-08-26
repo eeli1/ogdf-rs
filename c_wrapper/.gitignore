@@ -6,3 +6,5 @@ libc_wrapper.a
 CMakeDoxyfile.in
 CMakeDoxygenDefaults.cmake
 c_wrapper
+libCOIN.a
+libOGDF.a
