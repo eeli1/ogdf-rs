@@ -7,3 +7,4 @@ c_wrapper/libOGDF.a
 .vscode/configurationCache.log
 .vscode/dryrun.log
 .vscode/targets.log
+.vscode/settings.json

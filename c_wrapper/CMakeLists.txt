@@ -1,7 +1,10 @@
 cmake_minimum_required(VERSION 3.1)
 project(OGDF-SYS CXX)
 
-add_library(c_wrapper STATIC test.cpp graph.cpp)
+
+SET(TARGET_SRC src/test.cpp src/graph.cpp src/io/writer.cpp src/io/reader.cpp)
+
+add_library(c_wrapper STATIC "${TARGET_SRC}")
 
 add_subdirectory(ogdf)
 include_directories(c_wrapper ogdf/include)
