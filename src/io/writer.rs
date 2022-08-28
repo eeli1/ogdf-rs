@@ -14,5 +14,5 @@ pub fn write_chaco(gr: GraphRaw) -> Result<String, Error> {
 }
 
 pub fn write_graph_ml(gr: GraphRaw) -> Result<String, Error> {
-    char_ptr_2_string(unsafe { writeGraphML(gr) })
+    unsafe { char_ptr_2_string(writeGraphML(gr)) }
 }

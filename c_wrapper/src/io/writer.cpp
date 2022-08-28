@@ -14,11 +14,11 @@ const char *writeChaco(GraphRaw gr)
 
 const char *writeGraphML(GraphRaw gr)
 {
+    ogdf::Graph g = *((ogdf::Graph *)gr.raw);
     std::ostringstream os;
-    ogdf::Graph G(*((ogdf::Graph *)gr.raw));
-    if (!ogdf::GraphIO::writeGraphML(G, os))
+    if (!ogdf::GraphIO::writeGraphML(g, os))
         return nullptr;
-    std::string str = os.str();
-    const char *ptr = str.c_str();
-    return ptr;
+    static std::string str = os.str();
+    const char *c = str.c_str();
+    return c;
 }

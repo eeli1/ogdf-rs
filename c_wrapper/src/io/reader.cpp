@@ -7,7 +7,7 @@ GraphRaw readGraphML(const char *str)
     std::string s = str;
     std::stringbuf buf(s);
     std::istream is(&buf);
-    ogdf::Graph g;
+    static ogdf::Graph g;
 
     GraphRaw gr;
     gr.raw = (void *)&g;

@@ -5,6 +5,7 @@ project(OGDF-SYS CXX)
 SET(TARGET_SRC src/test.cpp src/graph.cpp src/io/writer.cpp src/io/reader.cpp)
 
 add_library(c_wrapper STATIC "${TARGET_SRC}")
+# add_executable(c_wrapper "${TARGET_SRC}" src/main.cpp)
 
 add_subdirectory(ogdf)
 include_directories(c_wrapper ogdf/include)
