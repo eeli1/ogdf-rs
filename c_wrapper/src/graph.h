@@ -3,7 +3,8 @@
 typedef enum
 {
     Graph,
-    Error
+    Error,
+    Biconnec,
 } GraphType;
 
 typedef struct GraphRaw
