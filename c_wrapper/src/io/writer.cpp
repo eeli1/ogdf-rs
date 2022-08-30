@@ -1,58 +1,113 @@
 #include <ogdf/fileformats/GraphIO.h>
 #include "writer.h"
 
-const char *writeAbstractGraph(GraphRaw gr, ogdf::GraphIO::WriterFunc func)
+const char *writeChaco(GraphRaw gr)
 {
     ogdf::Graph g = *((ogdf::Graph *)gr.raw);
     std::ostringstream os;
-    if (!func(g, os))
+    if (!ogdf::GraphIO::writeChaco(g, os))
         return nullptr;
     static std::string str = os.str();
     const char *c = str.c_str();
     return c;
 }
-
-const char *writeChaco(GraphRaw gr)
-{
-    return writeAbstractGraph(gr, ogdf::GraphIO::writeChaco);
-}
 const char *writeDL(GraphRaw gr)
 {
-    return writeAbstractGraph(gr, ogdf::GraphIO::writeDL);
+    ogdf::Graph g = *((ogdf::Graph *)gr.raw);
+    std::ostringstream os;
+    if (!ogdf::GraphIO::writeDL(g, os))
+        return nullptr;
+    static std::string str = os.str();
+    const char *c = str.c_str();
+    return c;
 }
 const char *writeDOT(GraphRaw gr)
 {
-    return writeAbstractGraph(gr, ogdf::GraphIO::writeDOT);
+    ogdf::Graph g = *((ogdf::Graph *)gr.raw);
+    std::ostringstream os;
+    if (!ogdf::GraphIO::writeDOT(g, os))
+        return nullptr;
+    static std::string str = os.str();
+    const char *c = str.c_str();
+    return c;
 }
 const char *writeGDF(GraphRaw gr)
 {
-    return writeAbstractGraph(gr, ogdf::GraphIO::writeGDF);
+    ogdf::Graph g = *((ogdf::Graph *)gr.raw);
+    std::ostringstream os;
+    if (!ogdf::GraphIO::writeGDF(g, os))
+        return nullptr;
+    static std::string str = os.str();
+    const char *c = str.c_str();
+    return c;
 }
 const char *writeGEXF(GraphRaw gr)
 {
-    return writeAbstractGraph(gr, ogdf::GraphIO::writeGEXF);
+    ogdf::Graph g = *((ogdf::Graph *)gr.raw);
+    std::ostringstream os;
+    if (!ogdf::GraphIO::writeGEXF(g, os))
+        return nullptr;
+    static std::string str = os.str();
+    const char *c = str.c_str();
+    return c;
 }
 const char *writeGML(GraphRaw gr)
 {
-    return writeAbstractGraph(gr, ogdf::GraphIO::writeGML);
+    ogdf::Graph g = *((ogdf::Graph *)gr.raw);
+    std::ostringstream os;
+    if (!ogdf::GraphIO::writeGML(g, os))
+        return nullptr;
+    static std::string str = os.str();
+    const char *c = str.c_str();
+    return c;
 }
 const char *writeGraphML(GraphRaw gr)
 {
-    return writeAbstractGraph(gr, ogdf::GraphIO::writeGraphML);
+    ogdf::Graph g = *((ogdf::Graph *)gr.raw);
+    std::ostringstream os;
+    if (!ogdf::GraphIO::writeGraphML(g, os))
+        return nullptr;
+    static std::string str = os.str();
+    const char *c = str.c_str();
+    return c;
 }
 const char *writeLEDA(GraphRaw gr)
 {
-    return writeAbstractGraph(gr, ogdf::GraphIO::writeLEDA);
+    ogdf::Graph g = *((ogdf::Graph *)gr.raw);
+    std::ostringstream os;
+    if (!ogdf::GraphIO::writeLEDA(g, os))
+        return nullptr;
+    static std::string str = os.str();
+    const char *c = str.c_str();
+    return c;
 }
 const char *writePMDissGraph(GraphRaw gr)
 {
-    return writeAbstractGraph(gr, ogdf::GraphIO::writePMDissGraph);
+    ogdf::Graph g = *((ogdf::Graph *)gr.raw);
+    std::ostringstream os;
+    if (!ogdf::GraphIO::writePMDissGraph(g, os))
+        return nullptr;
+    static std::string str = os.str();
+    const char *c = str.c_str();
+    return c;
 }
 const char *writeRome(GraphRaw gr)
 {
-    return writeAbstractGraph(gr, ogdf::GraphIO::writeRome);
+    ogdf::Graph g = *((ogdf::Graph *)gr.raw);
+    std::ostringstream os;
+    if (!ogdf::GraphIO::writeRome(g, os))
+        return nullptr;
+    static std::string str = os.str();
+    const char *c = str.c_str();
+    return c;
 }
 const char *writeTLP(GraphRaw gr)
 {
-    return writeAbstractGraph(gr, ogdf::GraphIO::writeTLP);
+    ogdf::Graph g = *((ogdf::Graph *)gr.raw);
+    std::ostringstream os;
+    if (!ogdf::GraphIO::writeTLP(g, os))
+        return nullptr;
+    static std::string str = os.str();
+    const char *c = str.c_str();
+    return c;
 }

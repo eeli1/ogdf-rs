@@ -1,7 +1,6 @@
 #include <ogdf/fileformats/GraphIO.h>
 #include "reader.h"
 
-// this is only for iternal use
 GraphRaw readAbstractGraph(const char *str, ogdf::GraphIO::ReaderFunc func)
 {
     std::string s = str;
@@ -18,73 +17,246 @@ GraphRaw readAbstractGraph(const char *str, ogdf::GraphIO::ReaderFunc func)
     return gr;
 }
 
-
 GraphRaw readChaco(const char *str)
 {
-    return readAbstractGraph(str, ogdf::GraphIO::readChaco);
+    std::string s = str;
+    std::stringbuf buf(s);
+    std::istream is(&buf);
+    static ogdf::Graph g;
+    GraphRaw gr;
+    gr.raw = (void *)&g;
+    if (!ogdf::GraphIO::readChaco(g, is))
+        gr.graph_type = GraphType::Error;
+    else
+        gr.graph_type = GraphType::Graph;
+
+    return gr;
 }
 GraphRaw readDL(const char *str)
 {
-    return readAbstractGraph(str, ogdf::GraphIO::readDL);
+    std::string s = str;
+    std::stringbuf buf(s);
+    std::istream is(&buf);
+    static ogdf::Graph g;
+    GraphRaw gr;
+    gr.raw = (void *)&g;
+    if (!ogdf::GraphIO::readDL(g, is))
+        gr.graph_type = GraphType::Error;
+    else
+        gr.graph_type = GraphType::Graph;
+
+    return gr;
 }
 GraphRaw readDMF(const char *str)
 {
-    return readAbstractGraph(str, ogdf::GraphIO::readDMF);
+    std::string s = str;
+    std::stringbuf buf(s);
+    std::istream is(&buf);
+    static ogdf::Graph g;
+    GraphRaw gr;
+    gr.raw = (void *)&g;
+    if (!ogdf::GraphIO::readDMF(g, is))
+        gr.graph_type = GraphType::Error;
+    else
+        gr.graph_type = GraphType::Graph;
+
+    return gr;
 }
 GraphRaw readDOT(const char *str)
 {
-    return readAbstractGraph(str, ogdf::GraphIO::readDOT);
+    std::string s = str;
+    std::stringbuf buf(s);
+    std::istream is(&buf);
+    static ogdf::Graph g;
+    GraphRaw gr;
+    gr.raw = (void *)&g;
+    if (!ogdf::GraphIO::readDOT(g, is))
+        gr.graph_type = GraphType::Error;
+    else
+        gr.graph_type = GraphType::Graph;
+
+    return gr;
 }
 GraphRaw readGDF(const char *str)
 {
-    return readAbstractGraph(str, ogdf::GraphIO::readGDF);
+    std::string s = str;
+    std::stringbuf buf(s);
+    std::istream is(&buf);
+    static ogdf::Graph g;
+    GraphRaw gr;
+    gr.raw = (void *)&g;
+    if (!ogdf::GraphIO::readGDF(g, is))
+        gr.graph_type = GraphType::Error;
+    else
+        gr.graph_type = GraphType::Graph;
+
+    return gr;
 }
 GraphRaw readGEXF(const char *str)
 {
-    return readAbstractGraph(str, ogdf::GraphIO::readGEXF);
+    std::string s = str;
+    std::stringbuf buf(s);
+    std::istream is(&buf);
+    static ogdf::Graph g;
+    GraphRaw gr;
+    gr.raw = (void *)&g;
+    if (!ogdf::GraphIO::readGEXF(g, is))
+        gr.graph_type = GraphType::Error;
+    else
+        gr.graph_type = GraphType::Graph;
+
+    return gr;
 }
 GraphRaw readGML(const char *str)
 {
-    return readAbstractGraph(str, ogdf::GraphIO::readGML);
+    std::string s = str;
+    std::stringbuf buf(s);
+    std::istream is(&buf);
+    static ogdf::Graph g;
+    GraphRaw gr;
+    gr.raw = (void *)&g;
+    if (!ogdf::GraphIO::readGML(g, is))
+        gr.graph_type = GraphType::Error;
+    else
+        gr.graph_type = GraphType::Graph;
+
+    return gr;
 }
 GraphRaw readGraphML(const char *str)
 {
-    return readAbstractGraph(str, ogdf::GraphIO::readGraphML);
+    std::string s = str;
+    std::stringbuf buf(s);
+    std::istream is(&buf);
+    static ogdf::Graph g;
+    GraphRaw gr;
+    gr.raw = (void *)&g;
+    if (!ogdf::GraphIO::readGraphML(g, is))
+        gr.graph_type = GraphType::Error;
+    else
+        gr.graph_type = GraphType::Graph;
+
+    return gr;
 }
 GraphRaw readLEDA(const char *str)
 {
-    return readAbstractGraph(str, ogdf::GraphIO::readLEDA);
+    std::string s = str;
+    std::stringbuf buf(s);
+    std::istream is(&buf);
+    static ogdf::Graph g;
+    GraphRaw gr;
+    gr.raw = (void *)&g;
+    if (!ogdf::GraphIO::readLEDA(g, is))
+        gr.graph_type = GraphType::Error;
+    else
+        gr.graph_type = GraphType::Graph;
+
+    return gr;
 }
 GraphRaw readMatrixMarket(const char *str)
 {
-    return readAbstractGraph(str, ogdf::GraphIO::readMatrixMarket);
+    std::string s = str;
+    std::stringbuf buf(s);
+    std::istream is(&buf);
+    static ogdf::Graph g;
+    GraphRaw gr;
+    gr.raw = (void *)&g;
+    if (!ogdf::GraphIO::readMatrixMarket(g, is))
+        gr.graph_type = GraphType::Error;
+    else
+        gr.graph_type = GraphType::Graph;
+
+    return gr;
 }
 GraphRaw readPMDissGraph(const char *str)
 {
-    return readAbstractGraph(str, ogdf::GraphIO::readPMDissGraph);
+    std::string s = str;
+    std::stringbuf buf(s);
+    std::istream is(&buf);
+    static ogdf::Graph g;
+    GraphRaw gr;
+    gr.raw = (void *)&g;
+    if (!ogdf::GraphIO::readPMDissGraph(g, is))
+        gr.graph_type = GraphType::Error;
+    else
+        gr.graph_type = GraphType::Graph;
+
+    return gr;
 }
 GraphRaw readRome(const char *str)
 {
-    return readAbstractGraph(str, ogdf::GraphIO::readRome);
+    std::string s = str;
+    std::stringbuf buf(s);
+    std::istream is(&buf);
+    static ogdf::Graph g;
+    GraphRaw gr;
+    gr.raw = (void *)&g;
+    if (!ogdf::GraphIO::readRome(g, is))
+        gr.graph_type = GraphType::Error;
+    else
+        gr.graph_type = GraphType::Graph;
+
+    return gr;
 }
 GraphRaw readRudy(const char *str)
 {
-    return readAbstractGraph(str, ogdf::GraphIO::readRudy);
+    std::string s = str;
+    std::stringbuf buf(s);
+    std::istream is(&buf);
+    static ogdf::Graph g;
+    GraphRaw gr;
+    gr.raw = (void *)&g;
+    if (!ogdf::GraphIO::readRudy(g, is))
+        gr.graph_type = GraphType::Error;
+    else
+        gr.graph_type = GraphType::Graph;
+
+    return gr;
 }
 GraphRaw readSTP(const char *str)
 {
-    return readAbstractGraph(str, ogdf::GraphIO::readSTP);
+    std::string s = str;
+    std::stringbuf buf(s);
+    std::istream is(&buf);
+    static ogdf::Graph g;
+    GraphRaw gr;
+    gr.raw = (void *)&g;
+    if (!ogdf::GraphIO::readSTP(g, is))
+        gr.graph_type = GraphType::Error;
+    else
+        gr.graph_type = GraphType::Graph;
+
+    return gr;
 }
 GraphRaw readTLP(const char *str)
 {
-    return readAbstractGraph(str, ogdf::GraphIO::readTLP);
+    std::string s = str;
+    std::stringbuf buf(s);
+    std::istream is(&buf);
+    static ogdf::Graph g;
+    GraphRaw gr;
+    gr.raw = (void *)&g;
+    if (!ogdf::GraphIO::readTLP(g, is))
+        gr.graph_type = GraphType::Error;
+    else
+        gr.graph_type = GraphType::Graph;
+
+    return gr;
 }
 GraphRaw readTsplibXml(const char *str)
 {
-    return readAbstractGraph(str, ogdf::GraphIO::readTsplibXml);
+    std::string s = str;
+    std::stringbuf buf(s);
+    std::istream is(&buf);
+    static ogdf::Graph g;
+    GraphRaw gr;
+    gr.raw = (void *)&g;
+    if (!ogdf::GraphIO::readTsplibXml(g, is))
+        gr.graph_type = GraphType::Error;
+    else
+        gr.graph_type = GraphType::Graph;
+
+    return gr;
 }
-
-
 
 /*
 GraphRaw readBENCH(const char *str)
