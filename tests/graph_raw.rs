@@ -1,4 +1,4 @@
-use ogdf_rs::graph_raw::GraphRaw;
+use ogdf_rs::GraphRaw;
 
 
 #[test]

@@ -83,8 +83,6 @@ GraphRaw readTsplibXml(const char *str)
     return readAbstractGraph(str, ogdf::GraphIO::readTsplibXml);
 }
 
-
-
 /*
 GraphRaw readBENCH(const char *str)
 {

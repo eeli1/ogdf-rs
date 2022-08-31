@@ -8,7 +8,7 @@ const char *writeAbstractGraph(GraphRaw gr, ogdf::GraphIO::WriterFunc func)
     if (!func(g, os))
         return nullptr;
     std::string str = os.str();
-    char * ptr = new char[str.length() + 1];
+    char *ptr = new char[str.length() + 1];
     strcpy(ptr, str.c_str());
     return ptr;
 }
