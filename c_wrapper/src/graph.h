@@ -1,16 +1,15 @@
 #pragma once
 
-typedef enum
-{
-    Graph,
-    Error,
-    Biconnec,
-} GraphType;
-
 typedef struct GraphRaw
 {
-    GraphType graph_type;
+
+    typedef enum
+    {
+        Graph = 0,
+        Error = 1,
+        Biconnec = 2,
+    } Type;
+
+    Type type;
     void *raw;
 };
-
-extern "C" void freeGraphRaw(GraphRaw &gr);

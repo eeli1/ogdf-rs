@@ -26,10 +26,10 @@ GraphRaw randomBiconnectedGraph(int n, int m)
     // ogdf::randomUpwardPlanarBiconnectedDigraph
     // ogdf::randomWattsStrogatzGraph
     // ogdf::randomWaxmanGraph
+
     GraphRaw gr;
-    gr.raw = (void *)&g;
-    gr.graph_type = GraphType::Biconnec;
     return gr;
+    // return GraphRaw((void *)&g, GraphRaw::Type::Biconnec);
 }
 
 /// Implements the algorithm described in: The average distance in a random graph with given expected degrees Fang Chung and Linyuan Lu http://www.math.ucsd.edu/~fan/wp/aveflong.pdf Given an expected degree distribution of length n:

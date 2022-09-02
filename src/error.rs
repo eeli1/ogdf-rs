@@ -4,6 +4,8 @@ pub enum Error {
     NulError,
 }
 
-pub fn make_msg(msg: &str) -> Error {
-    Error::Msg(msg.to_string())
+impl Error {
+    pub fn make_msg(msg: &str) -> Error {
+        Error::Msg(msg.to_string())
+    }
 }

@@ -3,9 +3,9 @@
 
 const char *writeAbstractGraph(GraphRaw gr, ogdf::GraphIO::WriterFunc func)
 {
-    ogdf::Graph g = *((ogdf::Graph *)gr.raw);
+    ogdf::Graph *g = (ogdf::Graph *)gr.raw;
     std::ostringstream os;
-    if (!func(g, os))
+    if (!func(*g, os))
         return nullptr;
     std::string str = os.str();
     char *ptr = new char[str.length() + 1];

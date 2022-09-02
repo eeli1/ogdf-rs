@@ -11,10 +11,9 @@ GraphRaw readAbstractGraph(const char *str, ogdf::GraphIO::ReaderFunc func)
     GraphRaw gr;
     gr.raw = (void *)g;
     if (!func(*g, is))
-        gr.graph_type = GraphType::Error;
+        gr.type = GraphRaw::Type::Error;
     else
-        gr.graph_type = GraphType::Graph;
-
+        gr.type = GraphRaw::Type::Graph;
     return gr;
 }
 

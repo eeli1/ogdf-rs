@@ -7,8 +7,6 @@
 #include <ogdf/planarity/VariableEmbeddingInserter.h>
 #include <ogdf/fileformats/GraphIO.h>
 
-using namespace ogdf;
-
 #include <iostream>
 
 void test()
@@ -24,4 +22,9 @@ int double_input(int input)
 const char *say_hello()
 {
     return OGDF_VERSION;
+}
+
+void print_str_aaa(const char *str)
+{
+    std::cout << "ptr: " << &str << "\tvalue: " << str << std::endl;
 }

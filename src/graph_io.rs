@@ -1,6 +1,5 @@
 use crate::error::Error;
 use crate::graph_raw::GraphRaw;
-use crate::helper::char_ptr_2_string;
 use std::ffi::CString;
 use std::os::raw::c_char;
 
@@ -66,7 +65,7 @@ extern "C" {
 impl GraphIO {
     pub fn read_str(str: String, file_type: FileType) -> Result<GraphRaw, Error> {
         if let Ok(c_str) = CString::new(str) {
-            let char_ptr: *const c_char = c_str.as_ptr() as *const c_char;
+            let char_ptr = c_str.as_ptr();
             unsafe {
                 Ok(match file_type {
                     FileType::Chaco => readChaco(char_ptr),
@@ -94,7 +93,7 @@ impl GraphIO {
 
     pub fn write_str(gr: GraphRaw, file_type: FileType) -> Result<String, Error> {
         unsafe {
-            char_ptr_2_string(match file_type {
+            let c_str = CString::from_raw(match file_type {
                 FileType::Chaco => writeChaco(gr),
                 FileType::DL => writeDL(gr),
                 FileType::DOT => writeDOT(gr),
@@ -112,7 +111,14 @@ impl GraphIO {
                         file_type
                     )))
                 }
-            })
+            } as *mut i8);
+
+            if let Ok(str_slice) = c_str.to_str() {
+                let str_buf = str_slice.to_owned();
+                Ok(str_buf)
+            } else {
+                Err(Error::make_msg("convert CStr failed"))
+            }
         }
     }
 }

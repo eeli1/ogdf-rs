@@ -3,6 +3,5 @@ make
 cd ..
 
 cargo b
-
-cd target/debug
-valgrind ./ogdf-rs
+cd target/debug/
+valgrind --leak-check=full ./ogdf-rs
