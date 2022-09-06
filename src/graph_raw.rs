@@ -1,5 +1,5 @@
 #[repr(C)]
-#[derive(Debug, Copy, Clone)]
+#[derive(Debug, Copy, Clone, PartialEq)]
 pub enum GraphType {
     Graph = 0,
     Error = 1,

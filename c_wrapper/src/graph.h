@@ -5,9 +5,21 @@ typedef struct GraphRaw
 
     typedef enum
     {
-        Graph = 0,
-        Error = 1,
-        Biconnec = 2,
+        Graph,
+        Error,
+        Biconnec,
+        GeometricCube,
+        Digraph,
+        Hierarchy,
+        PlanarBiconnectedDigraph,
+        DAG,
+        Simple,
+        Tree,
+        Triconnected,
+        Waxman,
+        WattsStrogatz,
+        Bipartite,
+        Grid,
     } Type;
 
     Type type;
